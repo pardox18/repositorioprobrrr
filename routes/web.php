@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('trincket');
+    return view('trincket'); 
+});
+
+Route::get('/registro', function () {
+    return view('registro'); 
+});
+
+Route::get('/inicio', function () {
+    return view('inicio'); 
 });
