@@ -1,15 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('trincket'); 
-});
+// Ruta principal
+Route::view('/', 'trincket')->name('home');
 
-Route::get('/registro', function () {
-    return view('registro'); 
-});
-
-Route::get('/inicio', function () {
-    return view('inicio'); 
+// Grupo de rutas de autenticación
+Route::prefix('auth')->group(function () {
+    Route::view('/registro', 'registro')->name('registro');
+    Route::view('/inicio', 'inicio')->name('inicio');
 });
